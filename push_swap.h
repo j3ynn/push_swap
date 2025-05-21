@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:20:23 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 17:20:44 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:56:04 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,16 @@ void	ft_free_strs(char **strs);
 void	signs(char c, int *sign, int *index);
 void	sort_three(t_stack *a);
 void	int_cat(t_stack *a, int num);
+void	apply_rot_a(t_stack *a, int rot);
+void	apply_rot_b(t_stack *b, int rot);
 
 int		parse_args(t_stack *a,int ac, char **av);
 int		parse_one_arg(t_stack *a, char **numbers);
 int		check_number(t_stack *a, char *num);
 int		check_duplicate(t_stack *a,int num);
 int		max_min(long num);
+int		index_min(t_stack *stack);
+int		calculate_min_rot(t_stack *stack, int num, int flag);
+int		module(int n);
 
 #endif
