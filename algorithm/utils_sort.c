@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 13:56:36 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/19 17:26:35 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:38:08 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,44 +40,53 @@ void	apply_rot_b(t_stack *b, int rot)
 	}
 }
 
-int	calculate_min_rot(t_stack *stack, int num, int flag)
+int	calculate_min_rot_b(t_stack *b, int num)
 {
-	int	indx;
 	int	i;
 
-	if (!flag)
-		indx = index_min(stack);
-	else
-		indx = 0;
 	i = 0;
-	while (i < stack->size)
+	while (i < b->size)
 	{
-		if (num < stack->stack[indx] && !flag)
-			break ;
-		if (num == stack->stack[indx] && flag)
-			break ;
-		i++;
-		indx++;
-		if (indx == stack->size)
-			indx = 0;
+		if(b->stack[i] == num)
+			break;
+		i ++;
 	}
-	if ((indx - stack->size > 0 && indx < indx - stack->size)
-				|| (indx - stack->size < 0 && indx < stack->size - indx))
-		return (indx);
-	else
-		return (indx - stack->size);
+	if (i <= b->size - i - 1)
+		return(i);
+	return (i - b->size);
 }
 
-int	index_min(t_stack *stack)
+int	calculate_min_rot_a(t_stack *a, int num)
+{
+	int	i;
+	int	index;
+
+	i = 0;
+	index = index_min(a);
+	while (i < a->size)
+	{
+		if(a->stack[index] < num)
+			break;
+		index++;
+		if (index == a->size)
+			index = 0;
+		i ++;
+	}
+	if (index <= a->size - index - 1)
+		return(index);
+	return (index - a->size);
+}
+
+int	index_min(t_stack *a)
 {
 	int	i;
 	int temp;
 
 	temp = 0;
 	i = 0;
-	while (i < stack->size)
+	while (i < a->size)
 	{
-		if (stack->stack[i] < stack->stack[temp])
+		if (a->stack[i] < a->stack[temp])
 			temp = i;
 		i ++;
 	}

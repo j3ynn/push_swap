@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:28:21 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 15:56:43 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:25:49 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,9 @@ int main(int ac, char **av)
 		free(b.stack);
 		return (1);
 	}
-	int i = 0;
-	while (i < a.size)
-	{
-		ft_printf("%i\n", a.stack[i]);
-		i++;
-	}
+	b.stack = ft_calloc(a.size ,sizeof(int));
+	if(!check_sort(&a))
+		sort(&a, &b);
 	free(a.stack);
 	free(b.stack);
 	return 0;

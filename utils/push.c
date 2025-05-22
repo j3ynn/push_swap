@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:28:07 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 16:16:13 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:35:16 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,47 @@
 
 void	pa(t_stack *a, t_stack *b)
 {
-	int t;
-
-	if (b->size > 0)
+	int	i;
+	if (b->size == 0)
+		return ;
+	i = a->size -1;
+	while (i >= 0)
 	{
-		t = a->size;
-		while (t--)
-			a->stack[t + 1] = a->stack[t];
-		a->stack[0] = b->stack[0];
-		a->size += 1;
-		t = 1;
-		while (1 < b->size)
-		{
-			b->stack[t - 1] = b->stack[t];
-			t ++;
-		}
-		b->size -= 1;
+		a->stack[i + 1] = a->stack[i];
+		i --;
 	}
+	a->stack[0] = b->stack[0];
+	i = 1;
+	while(i < b->size)
+	{
+		b->stack[i - 1] = b->stack[i];
+		i++;
+	}
+	a->size ++;
+	b->size --;
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *a, t_stack *b)
 {
-	int t;
-
-	if (a->size > 0)
+	int	i;
+	if (a->size == 0)
+		return ;
+	i = b->size -1;
+	while (i >= 0)
 	{
-		t = b->size;
-		while (t--)
-			b->stack[t + 1] = b->stack[t];
-		b->stack[0] = a->stack[0];
-		b->size += 1;
-		t = 1;
-		while (1 < a->size)
-		{
-			a->stack[t - 1] = a->stack[t];
-			t ++;
-		}
-		a->size -= 1;
+		b->stack[i + 1] = b->stack[i];
+		i --;
 	}
+	b->stack[0] = a->stack[0];
+	i = 1;
+	while(i < a->size)
+	{
+		a->stack[i - 1] = a->stack[i];
+		i++;
+	}
+	b->size ++;
+	a->size --;
 	write(1, "pb\n", 3);
 }
 void	ra(t_stack *a, int flag)

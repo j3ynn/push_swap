@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 16:34:44 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 17:22:59 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:21:05 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rra(t_stack *a, int flag)
 	}
 	a->stack[0] = t;
 	if (flag == 1)
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack *b, int flag)
@@ -43,7 +43,7 @@ void	rrb(t_stack *b, int flag)
 	}
 	b->stack[0] = t;
 	if(flag == 1)
-		write(1, "rrb\n", 3);
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack *a, t_stack *b)
