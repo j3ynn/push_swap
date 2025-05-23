@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 16:12:05 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/22 19:40:15 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:53:22 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort(t_stack *a, t_stack *b)
 	sort_three(a);
 	while (b->size > 0)
 		push(a, b);
-	apply_rot_a(a, calculate_min_rot_a(a, a->stack[index_min(a)]));
+	apply_rot_a(a, calculate_min_rot_b(a, a->stack[index_min(a)]));
 }
 
 void	sort_three(t_stack *a)
@@ -46,7 +46,6 @@ void	push(t_stack *a, t_stack *b)
 	rotate_b = calculate_min_rot_b(b, b->stack[econum]);
 	apply_rot_a(a, rotate_a);
 	apply_rot_b(b, rotate_b);
-	printf("%i %i", rotate_a, rotate_b);
 	pa(a, b);
 }
 
@@ -72,18 +71,4 @@ int	get_econum(t_stack *a, t_stack *b)
 		i ++;
 	}
 	return (index);
-}
-
-int	check_sort(t_stack *a)
-{
-	int	i;
-
-	i = 0;
-	while (i < a->size - 1)
-	{
-		if(a->stack[i] > a->stack[i + 1])
-			return (0);
-		i ++;
-	}
-	return (1);
 }

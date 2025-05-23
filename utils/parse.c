@@ -6,13 +6,13 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:56:36 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 17:27:33 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:59:09 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	parse_args(t_stack *a,int ac, char **av)
+int	parse_args(t_stack *a, int ac, char **av)
 {
 	int		i;
 	char	**temp;
@@ -29,7 +29,7 @@ int	parse_args(t_stack *a,int ac, char **av)
 		i ++;
 		ft_free_strs(temp);
 	}
-	return (1);	
+	return (1);
 }
 
 int	parse_one_arg(t_stack *a, char **numbers)
@@ -40,7 +40,7 @@ int	parse_one_arg(t_stack *a, char **numbers)
 	i = 0;
 	while (numbers[i] != NULL)
 	{
-		if(!check_number(a, numbers[i]))
+		if (!check_number(a, numbers[i]))
 			return (0);
 		number = ft_atoi(numbers[i]);
 		int_cat(a, number);
@@ -51,8 +51,8 @@ int	parse_one_arg(t_stack *a, char **numbers)
 
 void	int_cat(t_stack *a, int num)
 {
-	int i;
-	int *new_stack;
+	int	i;
+	int	*new_stack;
 
 	i = 0;
 	new_stack = ft_calloc(a->size + 1, sizeof(int));

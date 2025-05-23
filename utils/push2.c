@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 16:34:44 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/22 19:21:05 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:56:55 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rra(t_stack *a, int flag)
 {
-	int t;
-	int i;
+	int	t;
+	int	i;
 
 	t = a->stack[a->size - 1];
 	i = a->size - 2;
@@ -31,8 +31,8 @@ void	rra(t_stack *a, int flag)
 
 void	rrb(t_stack *b, int flag)
 {
-	int t;
-	int i;
+	int	t;
+	int	i;
 
 	t = b->stack[b->size - 1];
 	i = b->size - 2;
@@ -42,7 +42,7 @@ void	rrb(t_stack *b, int flag)
 		i --;
 	}
 	b->stack[0] = t;
-	if(flag == 1)
+	if (flag == 1)
 		write(1, "rrb\n", 4);
 }
 

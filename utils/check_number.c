@@ -6,39 +6,37 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 15:19:22 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 15:28:40 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:58:11 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//da modificare (copiato eheheheeh)
-
-int	check_number(t_stack *a, char *num)
+int	check_number(t_stack *a, char *str)
 {
 	int		i;
-	long	value;
 	int		sign;
+	long	num;
 
-	if (ft_strlen(num) == 0)
+	if (ft_strlen(str) == 0)
 		return (0);
-	value = 0;
+	num = 0;
 	sign = 1;
 	i = 0;
-	signs(num[i], &sign, &i);
-	if (!ft_isdigit(num[i]))
+	signs(str[i], &sign, &i);
+	if (!ft_isdigit(str[i]))
 		return (0);
-	while (num[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(num[i]))
+		if (!ft_isdigit(str[i]))
 			return (0);
-		value = (value * 10) + num[i] - '0';
-		if (!max_min(value * sign))
+		num = (num * 10) + str[i] - '0';
+		if (!max_min(num * sign))
 			return (0);
 		i++;
 	}
-	value *= sign;
-	return (check_duplicate(a, (int)value));
+	num *= sign;
+	return (check_duplicate(a, (int)num));
 }
 
 void	signs(char c, int *sign, int *index)
@@ -58,7 +56,7 @@ int	max_min(long num)
 	return (1);
 }
 
-int	check_duplicate(t_stack *a,int num)
+int	check_duplicate(t_stack *a, int num)
 {
 	int	i;
 

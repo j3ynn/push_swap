@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:20:23 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/22 18:59:23 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/23 16:06:15 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	apply_rot_b(t_stack *b, int rot);
 void	push(t_stack *a, t_stack *b);
 void	sort(t_stack *a, t_stack *b);
 
-int		parse_args(t_stack *a,int ac, char **av);
+int		parse_args(t_stack *a, int ac, char **av);
 int		parse_one_arg(t_stack *a, char **numbers);
-int		check_number(t_stack *a, char *num);
-int		check_duplicate(t_stack *a,int num);
+int		check_number(t_stack *a, char *str);
+int		check_duplicate(t_stack *a, int num);
 int		max_min(long num);
 int		index_min(t_stack *a);
 int		calculate_min_rot_b(t_stack *b, int num);
@@ -59,6 +59,5 @@ int		calculate_min_rot_a(t_stack *a, int num);
 int		module(int n);
 int		get_econum(t_stack *a, t_stack *b);
 int		check_sort(t_stack *a);
-
 
 #endif

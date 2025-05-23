@@ -6,7 +6,7 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:17:13 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/05/16 14:27:57 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/05/23 15:57:32 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_stack *a, int flag)
 {
 	int	t;
-	
+
 	t = a->stack[0];
 	a->stack[0] = a->stack[1];
 	a->stack[1] = t;
